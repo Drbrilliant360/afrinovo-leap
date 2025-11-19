@@ -22,10 +22,10 @@ export const CoreFeatures = () => {
   ];
 
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+    <section className="py-12 sm:py-16 md:py-24">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             Core <span className="text-primary">Features</span>
           </h2>
           <p className="text-lg text-muted-foreground">
@@ -33,11 +33,11 @@ export const CoreFeatures = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group p-6 bg-card rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-scale-in"
+              className="group p-4 sm:p-5 md:p-6 bg-card rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-scale-in"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               <feature.icon className="h-8 w-8 text-primary mb-4 group-hover:scale-110 transition-transform" />

@@ -30,10 +30,10 @@ export const ProblemStatement = () => {
   ];
 
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+    <section className="py-12 sm:py-16 md:py-24">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             The Gap We're <span className="text-secondary">Solving</span>
           </h2>
           <p className="text-lg text-muted-foreground">
@@ -42,15 +42,15 @@ export const ProblemStatement = () => {
         </div>
 
         {/* Challenges Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
           {challenges.map((challenge, index) => (
             <div
               key={index}
-              className="group p-8 bg-card rounded-2xl border border-border hover:border-secondary/50 transition-all duration-300 hover:shadow-lg animate-fade-in-up"
+              className="group p-5 sm:p-6 md:p-8 bg-card rounded-2xl border border-border hover:border-secondary/50 transition-all duration-300 hover:shadow-lg animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <challenge.icon className="h-12 w-12 text-secondary mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl font-semibold mb-3">{challenge.title}</h3>
+              <challenge.icon className="h-10 w-10 sm:h-12 sm:w-12 text-secondary mb-3 sm:mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{challenge.title}</h3>
               <p className="text-muted-foreground">{challenge.description}</p>
             </div>
           ))}

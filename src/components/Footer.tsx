@@ -53,11 +53,11 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="bg-foreground text-background py-16">
-      <div className="container mx-auto px-6">
+    <footer className="bg-foreground text-background py-8 sm:py-12 md:py-16">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Newsletter Section */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h3 className="text-3xl font-bold mb-4">Stay Connected</h3>
+        <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12 md:mb-16">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Stay Connected</h3>
           <p className="text-background/70 mb-6">
             Subscribe to our newsletter for updates on African innovation
           </p>
@@ -75,16 +75,16 @@ export const Footer = () => {
         </div>
 
         {/* Footer Links */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12">
           {footerSections.map((section, index) => (
             <div key={index}>
-              <h4 className="font-bold text-lg mb-4">{section.title}</h4>
-              <ul className="space-y-2">
+              <h4 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">{section.title}</h4>
+              <ul className="space-y-1.5 sm:space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a 
                       href="#" 
-                      className="text-background/70 hover:text-background transition-colors"
+                      className="text-background/70 hover:text-background transition-colors text-sm sm:text-base"
                     >
                       {link}
                     </a>
