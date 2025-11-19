@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-afrinovo.jpg";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background gradient */}
       <div 
         className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"
@@ -39,14 +39,13 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              variant="premium"
             >
               Explore Our Solutions
             </Button>
             <Button 
               size="lg" 
               variant="outline"
-              className="text-lg px-8 py-6 border-2 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 hover:scale-105"
             >
               Partner With Us
             </Button>
