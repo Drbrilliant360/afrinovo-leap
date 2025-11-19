@@ -19,10 +19,10 @@ export const Hero = () => {
         />
       </div>
 
-      <div className="relative container mx-auto px-6 py-24">
+      <div className="relative container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           {/* Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
             Building Africa's Future Through{" "}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Technology, Creativity & Innovation
@@ -30,13 +30,13 @@ export const Hero = () => {
           </h1>
 
           {/* Sub-headline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
             Afrinovo empowers individuals, communities, and businesses with cutting-edge 
             digital solutions and inclusive innovation programs across the continent.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 md:mb-16 px-4">
             <Button 
               size="lg" 
               variant="premium"
