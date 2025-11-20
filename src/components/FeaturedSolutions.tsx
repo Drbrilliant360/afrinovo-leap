@@ -22,18 +22,21 @@ export const FeaturedSolutions = () => {
       name: "Sisterhood Platform",
       description: "Empowering women through mentorship, networking, and personal development opportunities.",
       color: "primary",
+      url: "https://sisterhood1.vercel.app/",
     },
     {
       icon: Shield,
       name: "Lumocheck",
       description: "Smart product authenticity and digital verification for safer, transparent markets.",
       color: "secondary",
+      url: "https://lumocheck.vercel.app/",
     },
     {
       icon: Car,
       name: "Automarket",
       description: "Transforming African automotive trade through trust, transparency, and digital accessibility.",
       color: "accent",
+      url: "https://play.google.com/store/apps/details?id=com.alphatechlab.spare&pcampaignid=web_share",
     },
   ];
 
@@ -51,19 +54,19 @@ export const FeaturedSolutions = () => {
         {solution.description}
       </p>
 
-      <div className="flex gap-3">
+      <a 
+        href={solution.url} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="block"
+      >
         <Button 
           variant="outline"
-          className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+          className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
         >
           Learn More
         </Button>
-        <Button 
-          className="flex-1 bg-primary hover:bg-primary/90"
-        >
-          Join Waitlist
-        </Button>
-      </div>
+      </a>
     </div>
   );
 
