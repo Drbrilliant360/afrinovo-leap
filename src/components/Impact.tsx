@@ -1,6 +1,49 @@
 import { Award, Users, Globe, TrendingUp, Heart } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+
+const CountUpAnimation = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          const startTime = Date.now();
+          const animate = () => {
+            const currentTime = Date.now();
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            setCount(Math.floor(easeOutQuart * end));
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          };
+          animate();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [end, duration, hasAnimated]);
+
+  return (
+    <div ref={ref} className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+      {count}{suffix}
+    </div>
+  );
+};
 
 export const Impact = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -99,15 +142,15 @@ export const Impact = () => {
         {/* Impact Stats */}
         <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
           <div className="text-center p-4 sm:p-6 bg-card/50 rounded-2xl backdrop-blur">
-            <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">1000+</div>
+            <CountUpAnimation end={1000} suffix="+" />
             <div className="text-muted-foreground">Community Members</div>
           </div>
           <div className="text-center p-4 sm:p-6 bg-card/50 rounded-2xl backdrop-blur">
-            <div className="text-3xl sm:text-4xl font-bold text-secondary mb-2">50+</div>
+            <CountUpAnimation end={50} suffix="+" />
             <div className="text-muted-foreground">Partners & Collaborators</div>
           </div>
           <div className="text-center p-4 sm:p-6 bg-card/50 rounded-2xl backdrop-blur">
-            <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">10+</div>
+            <CountUpAnimation end={10} suffix="+" />
             <div className="text-muted-foreground">Countries Reached</div>
           </div>
         </div>
