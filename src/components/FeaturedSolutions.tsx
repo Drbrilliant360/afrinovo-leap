@@ -42,31 +42,39 @@ export const FeaturedSolutions = () => {
 
   const SolutionCard = ({ solution, index }: { solution: typeof solutions[0]; index: number }) => (
     <div
-      className="group bg-card p-5 sm:p-6 md:p-8 rounded-3xl border border-border hover:border-primary/50 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-scale-in h-full"
+      className="group relative bg-card p-5 sm:p-6 md:p-8 rounded-3xl border border-border hover:border-primary shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(var(--primary),0.3)] transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] animate-scale-in h-full overflow-hidden"
       style={{ animationDelay: `${index * 0.15}s` }}
     >
-      <div className="mb-6 p-4 bg-primary/10 rounded-2xl w-fit group-hover:scale-110 transition-transform">
-        <solution.icon className="h-10 w-10 text-primary" />
-      </div>
+      {/* Gradient overlay on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:via-transparent group-hover:to-accent/5 transition-all duration-500 rounded-3xl" />
       
-      <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">{solution.name}</h3>
-      <p className="text-muted-foreground mb-6 leading-relaxed">
-        {solution.description}
-      </p>
+      {/* Shine effect on hover */}
+      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      
+      <div className="relative z-10">
+        <div className="mb-6 p-4 bg-primary/10 rounded-2xl w-fit group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary/20 transition-all duration-300">
+          <solution.icon className="h-10 w-10 text-primary group-hover:text-primary group-hover:drop-shadow-[0_0_8px_rgba(var(--primary),0.5)] transition-all duration-300" />
+        </div>
+        
+        <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 group-hover:text-primary transition-colors duration-300">{solution.name}</h3>
+        <p className="text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+          {solution.description}
+        </p>
 
-      <a 
-        href={solution.url} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="block"
-      >
-        <Button 
-          variant="outline"
-          className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+        <a 
+          href={solution.url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block"
         >
-          Learn More
-        </Button>
-      </a>
+          <Button 
+            variant="outline"
+            className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 hover:shadow-lg"
+          >
+            Learn More
+          </Button>
+        </a>
+      </div>
     </div>
   );
 
