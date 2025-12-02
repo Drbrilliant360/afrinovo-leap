@@ -36,30 +36,30 @@ export const MarketOpportunity = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto mb-8 sm:mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto mb-8 sm:mb-12">
           {opportunities.map((item, index) => (
             <div
               key={index}
-              className="bg-card p-5 sm:p-6 md:p-8 rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-scale-in"
+              className="bg-card p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-scale-in active:scale-[0.98]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="mb-6 p-4 bg-primary/10 rounded-2xl w-fit mx-auto">
-                <item.icon className="h-10 w-10 text-primary" />
+              <div className="mb-3 sm:mb-4 md:mb-6 p-2.5 sm:p-3 md:p-4 bg-primary/10 rounded-xl sm:rounded-2xl w-fit mx-auto">
+                <item.icon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-primary" />
               </div>
-              <div className="text-2xl sm:text-3xl font-bold text-primary mb-2 text-center">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-1 sm:mb-2 text-center">
                 {item.stat}
               </div>
-              <p className="text-muted-foreground text-center">{item.label}</p>
+              <p className="text-muted-foreground text-center text-xs sm:text-sm md:text-base">{item.label}</p>
             </div>
           ))}
         </div>
 
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="p-5 sm:p-6 md:p-8 bg-card rounded-3xl border border-primary/20 shadow-xl">
-            <p className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
+        <div className="max-w-3xl mx-auto text-center px-4">
+          <div className="p-4 sm:p-5 md:p-6 lg:p-8 bg-card rounded-xl sm:rounded-2xl lg:rounded-3xl border border-primary/20 shadow-xl">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-1 sm:mb-2">
               afrinova stands at the center of Africa's digital transformation
             </p>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
               Join us in shaping the future of technology on the continent
             </p>
           </div>
