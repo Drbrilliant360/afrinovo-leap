@@ -59,7 +59,7 @@ export const ProblemStatement = () => {
         {/* Closing Statement */}
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xl font-medium text-foreground">
-            Afrinovo exists to bridge these gaps with practical, 
+            afrinova exists to bridge these gaps with practical,
             <span className="text-primary"> African-centered technology solutions</span>.
           </p>
         </div>

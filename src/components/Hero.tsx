@@ -31,7 +31,7 @@ export const Hero = () => {
 
           {/* Sub-headline */}
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
-            Afrinovo empowers individuals, communities, and businesses with cutting-edge 
+            afrinova empowers individuals, communities, and businesses with cutting-edge
             digital solutions and inclusive innovation programs across the continent.
           </p>
 

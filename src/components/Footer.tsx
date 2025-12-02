@@ -7,7 +7,7 @@ export const Footer = () => {
     {
       title: "Company",
       links: [
-        "About Afrinovo",
+        "About afrinova",
         "Our Mission & Vision",
         "Partnerships",
         "Careers",
@@ -113,7 +113,7 @@ export const Footer = () => {
 
             <div className="text-center md:text-right text-background/70">
               <p className="text-sm">
-                © 2024 Afrinovo Group Company Limited. All rights reserved.
+                © 2024 afrinova Group Company Limited. All rights reserved.
               </p>
               <p className="text-xs mt-1">
                 Building Africa's Future Through Technology
