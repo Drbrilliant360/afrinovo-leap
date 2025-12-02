@@ -20,7 +20,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-            <img src={logo} alt="AFRINOVO" className="h-12 w-auto" />
+            <img src={logo} alt="afrinova" className="h-12 w-auto" />
           </a>
 
           {/* Desktop Navigation */}

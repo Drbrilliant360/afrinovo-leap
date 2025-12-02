@@ -57,7 +57,7 @@ export const MarketOpportunity = () => {
         <div className="max-w-3xl mx-auto text-center">
           <div className="p-5 sm:p-6 md:p-8 bg-card rounded-3xl border border-primary/20 shadow-xl">
             <p className="text-lg sm:text-xl md:text-2xl font-bold mb-2">
-              Afrinovo stands at the center of Africa's digital transformation
+              afrinova stands at the center of Africa's digital transformation
             </p>
             <p className="text-lg text-muted-foreground">
               Join us in shaping the future of technology on the continent

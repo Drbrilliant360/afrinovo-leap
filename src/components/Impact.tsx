@@ -106,7 +106,7 @@ export const Impact = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-            Afrinovo <span className="text-secondary">Impact</span>
+            afrinova <span className="text-secondary">Impact</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Creating meaningful change across the continent
