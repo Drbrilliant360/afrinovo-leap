@@ -39,7 +39,7 @@ const CountUpAnimation = ({ end, duration = 2000, suffix = "" }: { end: number; 
   }, [end, duration, hasAnimated]);
 
   return (
-    <div ref={ref} className="text-3xl sm:text-4xl font-bold text-primary mb-2">
+    <div ref={ref} className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-1 sm:mb-2">
       {count}{suffix}
     </div>
   );
@@ -88,14 +88,14 @@ export const Impact = () => {
 
   const ImpactCard = ({ area, index }: { area: typeof focusAreas[0]; index: number }) => (
     <div
-      className="bg-card p-5 sm:p-6 md:p-8 rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up h-full"
+      className="bg-card p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up h-full active:scale-[0.98]"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="mb-6 p-4 bg-primary/10 rounded-2xl w-fit">
-        <area.icon className="h-10 w-10 text-primary" />
+      <div className="mb-4 sm:mb-5 md:mb-6 p-3 sm:p-4 bg-primary/10 rounded-xl sm:rounded-2xl w-fit">
+        <area.icon className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 text-primary" />
       </div>
-      <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{area.title}</h3>
-      <p className="text-muted-foreground leading-relaxed">
+      <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3">{area.title}</h3>
+      <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
         {area.description}
       </p>
     </div>
@@ -140,18 +140,18 @@ export const Impact = () => {
         )}
 
         {/* Impact Stats */}
-        <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
-          <div className="text-center p-4 sm:p-6 bg-card/50 rounded-2xl backdrop-blur">
+        <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
+          <div className="text-center p-3 sm:p-4 md:p-6 bg-card/50 rounded-xl sm:rounded-2xl backdrop-blur">
             <CountUpAnimation end={1000} suffix="+" />
-            <div className="text-muted-foreground">Community Members</div>
+            <div className="text-muted-foreground text-xs sm:text-sm md:text-base">Community Members</div>
           </div>
-          <div className="text-center p-4 sm:p-6 bg-card/50 rounded-2xl backdrop-blur">
+          <div className="text-center p-3 sm:p-4 md:p-6 bg-card/50 rounded-xl sm:rounded-2xl backdrop-blur">
             <CountUpAnimation end={50} suffix="+" />
-            <div className="text-muted-foreground">Partners & Collaborators</div>
+            <div className="text-muted-foreground text-xs sm:text-sm md:text-base">Partners & Collaborators</div>
           </div>
-          <div className="text-center p-4 sm:p-6 bg-card/50 rounded-2xl backdrop-blur">
+          <div className="text-center p-3 sm:p-4 md:p-6 bg-card/50 rounded-xl sm:rounded-2xl backdrop-blur">
             <CountUpAnimation end={10} suffix="+" />
-            <div className="text-muted-foreground">Countries Reached</div>
+            <div className="text-muted-foreground text-xs sm:text-sm md:text-base">Countries Reached</div>
           </div>
         </div>
       </div>

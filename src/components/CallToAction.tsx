@@ -36,19 +36,19 @@ export const CallToAction = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8 max-w-5xl mx-auto mb-8 sm:mb-12">
           {actions.map((action, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-lg p-5 sm:p-6 md:p-8 rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 animate-scale-in"
+              className="bg-white/10 backdrop-blur-lg p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 animate-scale-in active:scale-[0.98]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <action.icon className="h-10 w-10 sm:h-12 sm:w-12 text-white mb-3 sm:mb-4" />
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">{action.title}</h3>
-              <p className="text-white/80 mb-4">{action.description}</p>
+              <action.icon className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 text-white mb-3 sm:mb-4" />
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 sm:mb-3">{action.title}</h3>
+              <p className="text-white/80 mb-4 text-sm sm:text-base">{action.description}</p>
               <Button 
                 variant="secondary" 
-                className="w-full bg-white text-primary hover:bg-white/90 group"
+                className="w-full bg-white text-primary hover:bg-white/90 group h-11 sm:h-12"
               >
                 Get Started
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

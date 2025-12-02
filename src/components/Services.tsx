@@ -38,25 +38,25 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 max-w-6xl mx-auto mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6 max-w-6xl mx-auto mb-8 sm:mb-12">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group flex items-start gap-3 sm:gap-4 p-4 sm:p-5 md:p-6 bg-card rounded-2xl border border-border hover:border-secondary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-fade-in-up"
+              className="group flex items-start gap-3 sm:gap-4 p-4 sm:p-5 md:p-6 bg-card rounded-xl sm:rounded-2xl border border-border hover:border-secondary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-fade-in-up active:scale-[0.98]"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <div className="p-3 bg-secondary/10 rounded-xl group-hover:scale-110 transition-transform">
-                <service.icon className="h-6 w-6 text-secondary" />
+              <div className="p-2.5 sm:p-3 bg-secondary/10 rounded-lg sm:rounded-xl group-hover:scale-110 transition-transform flex-shrink-0">
+                <service.icon className="h-5 w-5 sm:h-6 sm:w-6 text-secondary" />
               </div>
-              <p className="font-medium pt-1 sm:pt-2 text-sm sm:text-base">{service.text}</p>
+              <p className="font-medium pt-0.5 sm:pt-1 text-sm sm:text-base leading-tight">{service.text}</p>
             </div>
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center px-4">
           <Button 
             size="lg" 
-            className="text-lg px-8 py-6 bg-secondary hover:bg-secondary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="text-sm sm:text-base md:text-lg px-6 sm:px-8 py-5 sm:py-6 bg-secondary hover:bg-secondary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto"
           >
             Book A Consultation
           </Button>

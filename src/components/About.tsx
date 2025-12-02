@@ -23,17 +23,17 @@ export const About = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-card p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 animate-scale-in"
+              className="bg-card p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-border shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 animate-scale-in active:scale-[0.98]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-1 sm:mb-2">
                 {stat.value}
               </div>
-              <div className="text-muted-foreground">{stat.label}</div>
+              <div className="text-muted-foreground text-sm sm:text-base">{stat.label}</div>
             </div>
           ))}
         </div>

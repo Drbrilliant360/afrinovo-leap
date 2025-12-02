@@ -75,16 +75,16 @@ export const Footer = () => {
         </div>
 
         {/* Footer Links */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 sm:gap-6 md:gap-8 lg:gap-12 mb-8 sm:mb-12">
           {footerSections.map((section, index) => (
             <div key={index}>
-              <h4 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">{section.title}</h4>
-              <ul className="space-y-1.5 sm:space-y-2">
+              <h4 className="font-bold text-sm sm:text-base lg:text-lg mb-3 sm:mb-4">{section.title}</h4>
+              <ul className="space-y-2 sm:space-y-2.5">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a 
                       href="#" 
-                      className="text-background/70 hover:text-background transition-colors text-sm sm:text-base"
+                      className="text-background/70 hover:text-background transition-colors text-xs sm:text-sm lg:text-base block py-0.5"
                     >
                       {link}
                     </a>
@@ -96,15 +96,15 @@ export const Footer = () => {
         </div>
 
         {/* Social Links & Copyright */}
-        <div className="border-t border-background/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex gap-4">
+        <div className="border-t border-background/20 pt-6 sm:pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
+            <div className="flex gap-3 sm:gap-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href="#"
                   aria-label={social.label}
-                  className="p-2 bg-background/10 rounded-full hover:bg-background/20 transition-colors"
+                  className="p-2.5 sm:p-2 bg-background/10 rounded-full hover:bg-background/20 transition-colors active:bg-background/30"
                 >
                   <social.icon className="h-5 w-5" />
                 </a>
@@ -112,10 +112,10 @@ export const Footer = () => {
             </div>
 
             <div className="text-center md:text-right text-background/70">
-              <p className="text-sm">
+              <p className="text-xs sm:text-sm">
                 © 2024 afrinova Group Company Limited. All rights reserved.
               </p>
-              <p className="text-xs mt-1">
+              <p className="text-[10px] sm:text-xs mt-1">
                 Building Africa's Future Through Technology
               </p>
             </div>
