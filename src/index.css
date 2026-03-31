@@ -64,24 +64,24 @@ All colors MUST be HSL.
     --popover: 20 20% 10%;
     --popover-foreground: 25 15% 95%;
 
-    --primary: 32 95% 50%;
-    --primary-foreground: 20 20% 8%;
+    --primary: 207 90% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 188 85% 45%;
+    --secondary: 190 80% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 20 20% 15%;
-    --muted-foreground: 25 10% 60%;
+    --muted: 210 20% 15%;
+    --muted-foreground: 210 10% 60%;
 
-    --accent: 188 85% 45%;
+    --accent: 45 90% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 20 20% 18%;
-    --input: 20 20% 18%;
-    --ring: 32 95% 50%;
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
+    --ring: 207 90% 50%;
   }
 }
 
