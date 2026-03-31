@@ -66,9 +66,9 @@ export const FeaturedSolutions = () => {
       {/* Shine effect on hover */}
       <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       
-      <div className="relative z-10">
-        <div className="mb-6 p-4 bg-primary/10 rounded-2xl w-fit group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary/20 transition-all duration-300">
-          <solution.icon className="h-10 w-10 text-primary group-hover:text-primary group-hover:drop-shadow-[0_0_8px_rgba(var(--primary),0.5)] transition-all duration-300" />
+      <div className="relative z-10 p-5 sm:p-6 md:p-8 pt-0">
+        <div className="mb-4 -mt-8 p-3 bg-primary/10 backdrop-blur-sm rounded-2xl w-fit group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary/20 transition-all duration-300 border border-border shadow-md">
+          <solution.icon className="h-8 w-8 text-primary group-hover:drop-shadow-[0_0_8px_rgba(var(--primary),0.5)] transition-all duration-300" />
         </div>
         
         <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 group-hover:text-primary transition-colors duration-300">{solution.name}</h3>
