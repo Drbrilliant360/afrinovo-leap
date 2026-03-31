@@ -103,8 +103,12 @@ export const Impact = () => {
   );
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-secondary/10 to-primary/5">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-secondary/10 to-primary/5 relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 opacity-[0.06]">
+        <img src={impactBg} alt="" className="w-full h-full object-cover" loading="lazy" />
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 relative">
         <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             afrinova <span className="text-secondary">Impact</span>
