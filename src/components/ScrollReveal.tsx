@@ -1,4 +1,4 @@
-import { motion, type Variant } from "framer-motion";
+import { motion } from "framer-motion";
 import { type ReactNode } from "react";
 
 type Direction = "up" | "down" | "left" | "right" | "none";
@@ -13,7 +13,7 @@ interface ScrollRevealProps {
   amount?: number;
 }
 
-const getInitial = (direction: Direction): Variant => {
+const getInitial = (direction: Direction) => {
   const base = { opacity: 0 };
   switch (direction) {
     case "up": return { ...base, y: 60 };
