@@ -24,6 +24,7 @@ export const FeaturedSolutions = () => {
       name: "Sisterhood Platform",
       description: "Empowering women through mentorship, networking, and personal development opportunities.",
       color: "primary",
+      image: sisterhoodImg,
       url: "https://sisterhood1.vercel.app/",
     },
     {
@@ -31,6 +32,7 @@ export const FeaturedSolutions = () => {
       name: "Lumocheck",
       description: "Smart product authenticity and digital verification for safer, transparent markets.",
       color: "secondary",
+      image: lumocheckImg,
       url: "https://lumocheck.vercel.app/",
     },
     {
@@ -38,15 +40,26 @@ export const FeaturedSolutions = () => {
       name: "Automarket",
       description: "Transforming African automotive trade through trust, transparency, and digital accessibility.",
       color: "accent",
+      image: automarketImg,
       url: "https://play.google.com/store/apps/details?id=com.alphatechlab.spare&pcampaignid=web_share",
     },
   ];
 
   const SolutionCard = ({ solution, index }: { solution: typeof solutions[0]; index: number }) => (
     <div
-      className="group relative bg-card p-5 sm:p-6 md:p-8 rounded-3xl border border-border hover:border-primary shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(var(--primary),0.3)] transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] animate-scale-in h-full overflow-hidden"
+      className="group relative bg-card rounded-3xl border border-border hover:border-primary shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(var(--primary),0.3)] transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] animate-scale-in h-full overflow-hidden"
       style={{ animationDelay: `${index * 0.15}s` }}
     >
+      {/* Solution Image */}
+      <div className="relative h-48 sm:h-52 overflow-hidden">
+        <img 
+          src={solution.image} 
+          alt={solution.name}
+          loading="lazy"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+      </div>
       {/* Gradient overlay on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:via-transparent group-hover:to-accent/5 transition-all duration-500 rounded-3xl" />
       
