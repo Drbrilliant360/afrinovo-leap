@@ -1,7 +1,8 @@
 import { Award, Users, Globe, TrendingUp, Heart } from "lucide-react";
-import impactBg from "@/assets/impact-africa.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useEffect, useState, useRef } from "react";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
+import impactBg from "@/assets/impact-africa.jpg";
 
 const CountUpAnimation = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
   const [count, setCount] = useState(0);
@@ -15,27 +16,18 @@ const CountUpAnimation = ({ end, duration = 2000, suffix = "" }: { end: number; 
           setHasAnimated(true);
           const startTime = Date.now();
           const animate = () => {
-            const currentTime = Date.now();
-            const elapsed = currentTime - startTime;
+            const elapsed = Date.now() - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            
             const easeOutQuart = 1 - Math.pow(1 - progress, 4);
             setCount(Math.floor(easeOutQuart * end));
-
-            if (progress < 1) {
-              requestAnimationFrame(animate);
-            }
+            if (progress < 1) requestAnimationFrame(animate);
           };
           animate();
         }
       },
       { threshold: 0.3 }
     );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [end, duration, hasAnimated]);
 
@@ -50,115 +42,85 @@ export const Impact = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-    
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const focusAreas = [
-    {
-      icon: Users,
-      title: "Empowering Women & Youth",
-      description: "Providing digital skills and opportunities for underserved communities",
-    },
-    {
-      icon: Award,
-      title: "Promoting Trust",
-      description: "Building credibility in digital commerce across Africa",
-    },
-    {
-      icon: Globe,
-      title: "Strengthening Ecosystems",
-      description: "Creating interconnected African tech communities",
-    },
-    {
-      icon: TrendingUp,
-      title: "Economic Participation",
-      description: "Driving sustainable economic growth and inclusion",
-    },
-    {
-      icon: Heart,
-      title: "Community Innovation",
-      description: "Building solutions from and for African communities",
-    },
+    { icon: Users, title: "Empowering Women & Youth", description: "Providing digital skills and opportunities for underserved communities" },
+    { icon: Award, title: "Promoting Trust", description: "Building credibility in digital commerce across Africa" },
+    { icon: Globe, title: "Strengthening Ecosystems", description: "Creating interconnected African tech communities" },
+    { icon: TrendingUp, title: "Economic Participation", description: "Driving sustainable economic growth and inclusion" },
+    { icon: Heart, title: "Community Innovation", description: "Building solutions from and for African communities" },
   ];
 
-  const ImpactCard = ({ area, index }: { area: typeof focusAreas[0]; index: number }) => (
-    <div
-      className="bg-card p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up h-full active:scale-[0.98]"
-      style={{ animationDelay: `${index * 0.1}s` }}
-    >
+  const ImpactCard = ({ area }: { area: typeof focusAreas[0] }) => (
+    <div className="bg-card p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full active:scale-[0.98]">
       <div className="mb-4 sm:mb-5 md:mb-6 p-3 sm:p-4 bg-primary/10 rounded-xl sm:rounded-2xl w-fit">
         <area.icon className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 text-primary" />
       </div>
       <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3">{area.title}</h3>
-      <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-        {area.description}
-      </p>
+      <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">{area.description}</p>
     </div>
   );
 
   return (
     <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-secondary/10 to-primary/5 relative overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0 opacity-[0.06]">
         <img src={impactBg} alt="" className="w-full h-full object-cover" loading="lazy" />
       </div>
       <div className="container mx-auto px-4 sm:px-6 relative">
-        <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-            afrinova <span className="text-secondary">Impact</span>
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Creating meaningful change across the continent
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+              afrinova <span className="text-secondary">Impact</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">Creating meaningful change across the continent</p>
+          </div>
+        </ScrollReveal>
 
         {isMobile ? (
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full max-w-sm mx-auto mb-8 sm:mb-12 md:mb-16"
-          >
-            <CarouselContent>
-              {focusAreas.map((area, index) => (
-                <CarouselItem key={index}>
-                  <ImpactCard area={area} index={index} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
-          </Carousel>
+          <ScrollReveal className="mb-8 sm:mb-12 md:mb-16">
+            <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-sm mx-auto">
+              <CarouselContent>
+                {focusAreas.map((area, index) => (
+                  <CarouselItem key={index}>
+                    <ImpactCard area={area} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+          </ScrollReveal>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
             {focusAreas.map((area, index) => (
-              <ImpactCard key={index} area={area} index={index} />
+              <StaggerItem key={index}>
+                <ImpactCard area={area} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         )}
 
-        {/* Impact Stats */}
-        <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
-          <div className="text-center p-3 sm:p-4 md:p-6 bg-card/50 rounded-xl sm:rounded-2xl backdrop-blur">
-            <CountUpAnimation end={1000} suffix="+" />
-            <div className="text-muted-foreground text-xs sm:text-sm md:text-base">Community Members</div>
+        <ScrollReveal delay={0.2}>
+          <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
+            <div className="text-center p-3 sm:p-4 md:p-6 bg-card/50 rounded-xl sm:rounded-2xl backdrop-blur">
+              <CountUpAnimation end={1000} suffix="+" />
+              <div className="text-muted-foreground text-xs sm:text-sm md:text-base">Community Members</div>
+            </div>
+            <div className="text-center p-3 sm:p-4 md:p-6 bg-card/50 rounded-xl sm:rounded-2xl backdrop-blur">
+              <CountUpAnimation end={50} suffix="+" />
+              <div className="text-muted-foreground text-xs sm:text-sm md:text-base">Partners & Collaborators</div>
+            </div>
+            <div className="text-center p-3 sm:p-4 md:p-6 bg-card/50 rounded-xl sm:rounded-2xl backdrop-blur">
+              <CountUpAnimation end={10} suffix="+" />
+              <div className="text-muted-foreground text-xs sm:text-sm md:text-base">Countries Reached</div>
+            </div>
           </div>
-          <div className="text-center p-3 sm:p-4 md:p-6 bg-card/50 rounded-xl sm:rounded-2xl backdrop-blur">
-            <CountUpAnimation end={50} suffix="+" />
-            <div className="text-muted-foreground text-xs sm:text-sm md:text-base">Partners & Collaborators</div>
-          </div>
-          <div className="text-center p-3 sm:p-4 md:p-6 bg-card/50 rounded-xl sm:rounded-2xl backdrop-blur">
-            <CountUpAnimation end={10} suffix="+" />
-            <div className="text-muted-foreground text-xs sm:text-sm md:text-base">Countries Reached</div>
-          </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
