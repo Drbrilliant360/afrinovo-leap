@@ -1,4 +1,5 @@
 import { Award, Users, Globe, TrendingUp, Heart } from "lucide-react";
+import impactBg from "@/assets/impact-africa.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useEffect, useState, useRef } from "react";
 
