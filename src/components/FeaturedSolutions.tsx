@@ -2,7 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Users, Shield, Car } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
-
+import sisterhoodImg from "@/assets/sisterhood-platform.jpg";
+import lumocheckImg from "@/assets/lumocheck-device.jpg";
+import automarketImg from "@/assets/automarket-app.jpg";
 export const FeaturedSolutions = () => {
   const [isMobile, setIsMobile] = useState(false);
 
